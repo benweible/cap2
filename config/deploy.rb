@@ -44,9 +44,4 @@ set :ssh_options, { :forward_agent => true, :port => 22 }
 # Default value for keep_releases is 5
 set :keep_releases, 3
 
-namespace :deploy do
-  desc "Restarting mod_rails with restart.txt"
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
-end
+
